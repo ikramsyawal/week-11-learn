@@ -32,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       status: {
         type: DataTypes.STRING(20),
+        allowNull: false,
       },
       createdAt: {
         type: DataTypes.DATE,

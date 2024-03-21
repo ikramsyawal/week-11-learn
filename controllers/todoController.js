@@ -2,19 +2,79 @@ const todoService = require("../services/todoService");
 
 class TodoController {
   // get all todo
-  static getAllTodos = async (req, res, next) => {
+  static findAll = async (req, res, next) => {
     try {
-      const todos = await todoService.getAllTodos();
-      res.status(200).json(todos);
+      const todos = await todoService.findAll();
+      res.status(200).json({
+        message: "Todos retrieved successfully",
+        todos,
+      });
     } catch (err) {
-      throw err;
+      next(err);
     }
   };
-  // create todo
-  static createTodo = async (req, res, next) => {
+
+  // get todo by id detailed
+  static findOne = async (req, res, next) => {
     try {
-      const todo = await todoService.createTodo(req.body);
-      res.status(201).json(todo);
+      const id = req.params.id;
+      const todo = await todoService.findOne(id);
+      res.status(200).json({
+        message: "Todo retrieved successfully",
+        todo,
+      });
+    } catch (err) {
+      next(err);
+    }
+  };
+
+  // create todo
+  static create = async (req, res, next) => {
+    try {
+      const body = req.body;
+      const todo = await todoService.create(body);
+      res.status(201).json({
+        message: "Todo created successfully",
+        todo,
+      });
+    } catch (err) {
+      next(err);
+    }
+  };
+
+  // update todo
+  static update = async (req, res, next) => {
+    try {
+      const params = {
+        id: req.params.id,
+        body: req.body,
+      };
+      const todo = await todoService.update(params);
+      res.status(200).json({ message: "Todo updated successfully" });
+    } catch (err) {
+      next(err);
+    }
+  };
+
+  // delete todo
+  static destroy = async (req, res, next) => {
+    try {
+      const id = req.params.id;
+      await todoService.destroy(id);
+      res.status(200).json({
+        message: "Todo deleted successfully",
+      });
+    } catch (err) {
+      next(err);
+    }
+  };
+
+  // get detailed todo
+  static getTodo = async (req, res, next) => {
+    try {
+      const id = req.params.id;
+      const todo = await todoService.getTodoById(id);
+      res.status(200).json(todo);
     } catch (err) {
       throw err;
     }
