@@ -5,10 +5,7 @@ class TodoController {
   static findAll = async (req, res, next) => {
     try {
       const todos = await todoService.findAll();
-      res.status(200).json({
-        message: "Todos retrieved successfully",
-        todos,
-      });
+      res.status(200).json(todos);
     } catch (err) {
       next(err);
     }
@@ -19,10 +16,7 @@ class TodoController {
     try {
       const id = req.params.id;
       const todo = await todoService.findOne(id);
-      res.status(200).json({
-        message: "Todo retrieved successfully",
-        todo,
-      });
+      res.status(200).json(todo);
     } catch (err) {
       next(err);
     }
@@ -33,10 +27,7 @@ class TodoController {
     try {
       const body = req.body;
       const todo = await todoService.create(body);
-      res.status(201).json({
-        message: "Todo created successfully",
-        todo,
-      });
+      res.status(201).json(todo);
     } catch (err) {
       next(err);
     }
@@ -61,22 +52,9 @@ class TodoController {
     try {
       const id = req.params.id;
       await todoService.destroy(id);
-      res.status(200).json({
-        message: "Todo deleted successfully",
-      });
+      res.status(200).json({ message: "Todo deleted successfully" });
     } catch (err) {
       next(err);
-    }
-  };
-
-  // get detailed todo
-  static getTodo = async (req, res, next) => {
-    try {
-      const id = req.params.id;
-      const todo = await todoService.getTodoById(id);
-      res.status(200).json(todo);
-    } catch (err) {
-      throw err;
     }
   };
 }
