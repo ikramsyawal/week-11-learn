@@ -5,14 +5,14 @@ const config = {
     username: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.POSTGRES_DB,
-    host: "localhost",
+    host: process.env.DB_HOST,
     dialect: "postgres",
   },
   test: {
     username: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.DB_TEST_NAME,
-    host: "localhost",
+    host: process.env.DB_HOST,
     dialect: "postgres",
   },
 
@@ -23,13 +23,6 @@ const config = {
     host: process.env.DB_HOST,
     dialect: "postgres",
     port: 5432,
-  },
-  dockerTest: {
-    username: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PASSWORD,
-    database: process.env.DB_TEST_NAME,
-    host: process.env.DB_HOST,
-    dialect: "postgres",
   },
 };
 
