@@ -21,7 +21,7 @@ jobs:
         # Provide the password for postgres
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: 2322
+          POSTGRES_PASSWORD: "2322"
           POSTGRES_DB: todo-test
           POSTGRES_HOST: localhost
           POSTGRES_PORT: 5432
