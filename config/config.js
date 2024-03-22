@@ -30,6 +30,13 @@ const config = {
     host: process.env.DB_HOST,
     dialect: "postgres",
   },
+  ciTest: {
+    username: "postgres",
+    password: "2322",
+    database: "todo-test",
+    host: "localhost",
+    dialect: "postgres",
+  },
 };
 
 module.exports = config;
