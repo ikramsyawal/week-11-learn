@@ -36,6 +36,10 @@ npx sequelize-cli db:create --env docker
 npx sequelize-cli db:migrate --env docker
 npx sequelize-cli db:seed:all --env docker
 
+### API Test
+
+To Access the api you can use port 8080
+
 ### Running Tests
 
 To run the unit tests inside the Docker container, use the following command:
