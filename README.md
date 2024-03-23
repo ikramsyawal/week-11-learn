@@ -32,7 +32,9 @@ After running `docker-compose up`, you need to create, migrate, and seed the dat
 
 2. Run the following commands to create and setup the database:
 
-npx sequelize-cli db:create npx sequelize-cli db:migrate npx sequelize-cli db:seed:all
+npx sequelize-cli db:create --env docker
+npx sequelize-cli db:migrate --env docker
+npx sequelize-cli db:seed:all --env docker
 
 ### Running Tests
 
