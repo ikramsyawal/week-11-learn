@@ -7,7 +7,7 @@ class TodoRepository {
       const todos = await Todo.findAll({
         ...params,
         attributes: { exclude: ["description", "createdAt", "updatedAt"] },
-        oder: [["id", "ASC"]],
+        order: [["id", "ASC"]],
       });
       return todos;
     } catch (err) {
