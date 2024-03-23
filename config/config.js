@@ -12,7 +12,7 @@ const config = {
     username: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.DB_TEST_NAME,
-    host: "localhost",
+    host: process.env.DB_HOST,
     dialect: "postgres",
   },
   docker: {
@@ -29,14 +29,6 @@ const config = {
     database: process.env.DB_TEST_NAME,
     host: process.env.DB_HOST,
     dialect: "postgres",
-  },
-  ciTest: {
-    username: "postgres",
-    password: "2322",
-    database: "todo-test",
-    host: postgres,
-    dialect: "postgres",
-    port: 5432,
   },
 };
 
