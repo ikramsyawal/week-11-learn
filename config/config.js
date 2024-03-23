@@ -34,8 +34,9 @@ const config = {
     username: "postgres",
     password: "2322",
     database: "todo-test",
-    host: "localhost",
+    host: postgres,
     dialect: "postgres",
+    port: 5432,
   },
 };
 
