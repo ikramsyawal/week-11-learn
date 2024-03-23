@@ -8,7 +8,7 @@
     "dev": "nodemon ./bin/www.js",
     "docker": "NODE_ENV=docker && node ./bin/www.js",
     "docker-test": "NODE_ENV=dockerTest && npx sequelize-cli db:create --env dockerTest || true && npx sequelize-cli db:migrate --env dockerTest && jest --detectOpenHandles --runInBand --forceExit --coverage --verbose --watchAll",
-    "ci-test": "NODE_ENV=ciTest && npx sequelize-cli db:create --env ciTest || true && npx sequelize-cli db:migrate --env ciTest && jest --detectOpenHandles --runInBand --forceExit --coverage --verbose --watchAll"
+    "ci-test": "NODE_ENV=ciTest && npx sequelize-cli db:create --env ciTest || true && npx sequelize-cli db:migrate --env ciTest && jest --detectOpenHandles --runInBand --forceExit --coverage --verbose"
   },
   "author": "ikram",
   "license": "ISC",
